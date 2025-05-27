@@ -1,10 +1,8 @@
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ShowDoJavao {
-
+public class  ShowDoJavao {
     private static final int PONTUACAO_CORRETA = 200;
     private static final int MAX_PONTUACAO = 1000;
 
@@ -49,17 +47,23 @@ public class ShowDoJavao {
 
     private static List<Pergunta> criarPerguntas() {
         List<Pergunta> perguntas = new ArrayList<>();
-        perguntas.add(new Pergunta("Qual é a linguagem usada para este jogo?",
-                List.of("Python", "Java", "C++", "PHP"), "B"));
-        perguntas.add(new Pergunta("Qual palavra-chave usamos para criar uma classe em Java?",
-                List.of("define", "function", "class", "public"), "C"));
+        perguntas.add(new Pergunta("Qual é a linguagem usada para este jogo?", 
+            List.of("Python", "Java", "C++", "PHP"), "B"));
+        perguntas.add(new Pergunta("Qual palavra-chave usamos para criar uma classe em Java?", 
+            List.of("define", "function", "class", "public"), "C"));
+            perguntas.add(new Pergunta("Como se fala "Lixo" em espanhol?", 
+            List.of("Basura", "Mugre", "Tiradero", "Porquería"), "A"));
+            perguntas.add(new Pergunta("O que essa palavra significa em espanhol "Esgotou"  ", 
+            List.of("Se acabo", "Acabado", "Consumido", "Agotado"), "D"));
+            perguntas.add(new Pergunta("Como se fala em espanhol "Espero que seja você" ? ", 
+            List.of("Aspiro que seas tu", "Aspiro que seas tu", "Ojala que seas tu", "Espero que seas tu"), "C"));
+
         // Adicione mais perguntas conforme necessário
         return perguntas;
     }
 }
 
 class Pergunta {
-
     private String texto;
     private List<String> alternativas;
     private String respostaCorreta;
@@ -86,5 +90,3 @@ class Pergunta {
         return resposta.equals(respostaCorreta);
     }
 }
-
-
