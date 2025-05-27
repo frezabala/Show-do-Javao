@@ -1,8 +1,10 @@
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class  ShowDoJavao {
+public class ShowDoJavao {
+
     private static final int PONTUACAO_CORRETA = 200;
     private static final int MAX_PONTUACAO = 1000;
 
@@ -47,16 +49,17 @@ public class  ShowDoJavao {
 
     private static List<Pergunta> criarPerguntas() {
         List<Pergunta> perguntas = new ArrayList<>();
-        perguntas.add(new Pergunta("Qual é a linguagem usada para este jogo?", 
-            List.of("Python", "Java", "C++", "PHP"), "B"));
-        perguntas.add(new Pergunta("Qual palavra-chave usamos para criar uma classe em Java?", 
-            List.of("define", "function", "class", "public"), "C"));
+        perguntas.add(new Pergunta("Qual é a linguagem usada para este jogo?",
+                List.of("Python", "Java", "C++", "PHP"), "B"));
+        perguntas.add(new Pergunta("Qual palavra-chave usamos para criar uma classe em Java?",
+                List.of("define", "function", "class", "public"), "C"));
         // Adicione mais perguntas conforme necessário
         return perguntas;
     }
 }
 
 class Pergunta {
+
     private String texto;
     private List<String> alternativas;
     private String respostaCorreta;
