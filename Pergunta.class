@@ -1,0 +1,30 @@
+
+import java.util.List;
+
+class Pergunta {
+   private String texto;
+   private List<String> alternativas;
+   private String respostaCorreta;
+
+   public Pergunta(String var1, List<String> var2, String var3) {
+      this.texto = var1;
+      this.alternativas = var2;
+      this.respostaCorreta = var3;
+   }
+
+   public String getTexto() {
+      return this.texto;
+   }
+
+   public List<String> getAlternativas() {
+      return this.alternativas;
+   }
+
+   public String getRespostaCorreta() {
+      return this.respostaCorreta;
+   }
+
+   public boolean isCorreta(String var1) {
+      return var1.equals(this.respostaCorreta);
+   }
+}

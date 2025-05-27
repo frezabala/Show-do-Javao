@@ -1,0 +1,65 @@
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ShowDoJavao {
+   private static final int PONTUACAO_CORRETA = 10;
+   private static final int MAX_PONTUACAO = 100;
+
+   public ShowDoJavao() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      List var2 = criarPerguntas();
+      int var3 = 0;
+      System.out.println("==============================");
+      System.out.println("  \ud83c\udfae Show do Javão \ud83c\udfae");
+      System.out.println("Vença para ganhar 1 milhão de Riais iranianos");
+      System.out.println("==============================");
+
+      for(int var4 = 0; var4 < var2.size(); ++var4) {
+         Pergunta var5 = (Pergunta)var2.get(var4);
+         System.out.println("Pergunta " + (var4 + 1) + ": " + var5.getTexto());
+         PrintStream var10000 = System.out;
+         List var10001 = var5.getAlternativas();
+         var10000.println("A) " + (String)var10001.get(0));
+         var10000 = System.out;
+         var10001 = var5.getAlternativas();
+         var10000.println("B) " + (String)var10001.get(1));
+         var10000 = System.out;
+         var10001 = var5.getAlternativas();
+         var10000.println("C) " + (String)var10001.get(2));
+         var10000 = System.out;
+         var10001 = var5.getAlternativas();
+         var10000.println("D) " + (String)var10001.get(3));
+         System.out.print("> Sua resposta: ");
+         String var6 = var1.nextLine().toUpperCase();
+         if (!var5.isCorreta(var6)) {
+            System.out.println("❌ Errado! A resposta correta era: " + var5.getRespostaCorreta());
+            break;
+         }
+
+         var3 += 10;
+         System.out.println("✅ Correto! +10 pontos!");
+      }
+
+      System.out.println("Fim de jogo!");
+      System.out.println("Você fez " + var3 + " pontos.");
+      if (var3 >= 100) {
+         System.out.println("Você foi bem!");
+      } else {
+         System.out.println("Tente novamente!");
+      }
+
+      var1.close();
+   }
+
+   private static List<Pergunta> criarPerguntas() {
+      ArrayList var0 = new ArrayList();
+      var0.add(new Pergunta("Qual é a linguagem usada para este jogo?", List.of("Python", "Java", "C++", "PHP"), "B"));
+      var0.add(new Pergunta("Qual palavra-chave usamos para criar uma classe em Java?", List.of("define", "function", "class", "public"), "C"));
+      return var0;
+   }
+}
